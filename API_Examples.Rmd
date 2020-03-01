@@ -17,7 +17,7 @@ See also the documentation for the [CKAN API](https://docs.ckan.org/en/ckan-2.7.
 
 If you don't have these packages installed, install them with `install.packages("packagename")`.
 
-```{r load, results = "hide"}
+```{r load, results = "hide", message = F}
 library("tidyverse") #a set of packages that make working in R more efficient
 library("httr") #tools for working with URLs
 library("jsonlite") #JSON parser and generator
@@ -78,7 +78,7 @@ head(test_dept_records)
 
 ## Use a loop to get data from all resources
 
-Using the `resource_ids` vector we created earlier, this script loops through all of the resource IDs and gets information for the specified business unit. The example uses BU 8880, which is the Department of FISCal.
+Using the `resource_ids` vector we created earlier, this script loops through all of the resource IDs and gets information for the specified business unit for all months. The example uses BU 8880, which is the Department of FISCal.
 
 ```{r all_resources}
 FISCal_list <- vector(mode = "list", length = length(resource_ids)) #creates a list to drop the retrieved data into; in this case, it will be a list of data frames

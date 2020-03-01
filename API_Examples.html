@@ -372,31 +372,10 @@ summary {
 <div id="load-necessary-packages" class="section level2">
 <h2>Load Necessary Packages</h2>
 <p>If you don’t have these packages installed, install them with <code>install.packages(&quot;packagename&quot;)</code>.</p>
-<pre class="r"><code>library(&quot;tidyverse&quot;) #a set of packages that make working in R more efficient</code></pre>
-<pre><code>## ── Attaching packages ──────────────────────────────────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
-<pre><code>## ✓ ggplot2 3.2.1     ✓ purrr   0.3.3
-## ✓ tibble  2.1.3     ✓ dplyr   0.8.3
-## ✓ tidyr   1.0.2     ✓ stringr 1.4.0
-## ✓ readr   1.3.1     ✓ forcats 0.4.0</code></pre>
-<pre><code>## ── Conflicts ─────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()</code></pre>
-<pre class="r"><code>library(&quot;httr&quot;) #tools for working with URLs
-library(&quot;jsonlite&quot;) #JSON parser and generator</code></pre>
-<pre><code>## 
-## Attaching package: 'jsonlite'</code></pre>
-<pre><code>## The following object is masked from 'package:purrr':
-## 
-##     flatten</code></pre>
-<pre class="r"><code>library(&quot;data.table&quot;) #more efficient extention of R's base data.frames</code></pre>
-<pre><code>## 
-## Attaching package: 'data.table'</code></pre>
-<pre><code>## The following objects are masked from 'package:dplyr':
-## 
-##     between, first, last</code></pre>
-<pre><code>## The following object is masked from 'package:purrr':
-## 
-##     transpose</code></pre>
+<pre class="r"><code>library(&quot;tidyverse&quot;) #a set of packages that make working in R more efficient
+library(&quot;httr&quot;) #tools for working with URLs
+library(&quot;jsonlite&quot;) #JSON parser and generator
+library(&quot;data.table&quot;) #more efficient extention of R's base data.frames</code></pre>
 </div>
 <div id="get-resource-ids" class="section level2">
 <h2>Get Resource IDs</h2>
@@ -646,7 +625,7 @@ head(test_dept_records)</code></pre>
 </div>
 <div id="use-a-loop-to-get-data-from-all-resources" class="section level2">
 <h2>Use a loop to get data from all resources</h2>
-<p>Using the <code>resource_ids</code> vector we created earlier, this script loops through all of the resource IDs and gets information for the specified business unit. The example uses BU 8880, which is the Department of FISCal.</p>
+<p>Using the <code>resource_ids</code> vector we created earlier, this script loops through all of the resource IDs and gets information for the specified business unit for all months. The example uses BU 8880, which is the Department of FISCal.</p>
 <pre class="r"><code>FISCal_list &lt;- vector(mode = &quot;list&quot;, length = length(resource_ids)) #creates a list to drop the retrieved data into; in this case, it will be a list of data frames
 BU = 8880 #can be any business unit you want
 count = 0
